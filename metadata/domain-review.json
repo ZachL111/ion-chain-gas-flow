@@ -1,0 +1,73 @@
+{
+  "repo": "ion-chain-gas-flow",
+  "language": "C",
+  "category": "Blockchain tooling",
+  "goal": "Implement a C blockchain tooling project for gas constraint solving, using bounded scenario files and conflict explanations.",
+  "review_model": {
+    "terms": [
+      "event finality",
+      "nonce pressure",
+      "settlement risk",
+      "proof depth"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "event finality",
+      "signal": 56,
+      "slack": 40,
+      "drag": 14,
+      "confidence": 46,
+      "score": 156,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "nonce pressure",
+      "signal": 80,
+      "slack": 25,
+      "drag": 10,
+      "confidence": 70,
+      "score": 225,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "settlement risk",
+      "signal": 66,
+      "slack": 35,
+      "drag": 14,
+      "confidence": 76,
+      "score": 201,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "proof depth",
+      "signal": 56,
+      "slack": 49,
+      "drag": 32,
+      "confidence": 90,
+      "score": 155,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "event finality",
+      "signal": 68,
+      "slack": 41,
+      "drag": 8,
+      "confidence": 93,
+      "score": 246,
+      "lane": "ship"
+    }
+  ]
+}
